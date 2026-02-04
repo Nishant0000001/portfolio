@@ -22,15 +22,15 @@ A production-ready, interactive portfolio showcasing my skills, projects, and en
 
 ## 🎯 Purpose of This Portfolio
 
-This portfolio is fully designed and developed by me to demonstrate:
+ This portfolio is fully designed and developed by me to demonstrate:
 
-Frontend engineering best practices
+- Frontend engineering best practices
 
-Component-driven React architecture
+- Component-driven React architecture
 
-Clean UI/UX with smooth animations
+- Clean UI/UX with smooth animations
 
-Real-world project ownership and decision-making
+- Real-world project ownership and decision-making
 
 It is intentionally built to help recruiters and hiring managers quickly understand how I think, build, and solve problems.
 
@@ -49,11 +49,11 @@ It is intentionally built to help recruiters and hiring managers quickly underst
 ## 🛠️ Tech Stack
 
 <div align="center">
-| Frontend | Styling | Animation | Tooling |
-|:--------:|:-------:|:---------:|:-------:|
+
 | React.js | Tailwind CSS | Framer Motion | Vite |
 | React Hooks | Responsive Design | Micro-interactions | Git & GitHub |
 | Component Architecture | Dark UI | Page Transitions | npm |
+
 </div>
 
 ## ✨ Key Features
@@ -82,6 +82,7 @@ It is intentionally built to help recruiters and hiring managers quickly underst
 
 ## 📂 Project Structure
 
+```
 📂portfolio/
 ├── 📂src/
 │ ├── 📂components/    # Contain all sections of my portfolio
@@ -104,6 +105,7 @@ It is intentionally built to help recruiters and hiring managers quickly underst
 │ ├── 📄main.jsx
 │ └── 📄index.css
 └── 📄package.json
+```
 
 ## Getting Started
 ### Prerequisites
@@ -125,6 +127,7 @@ http://localhost:5173
 
 ## 🎓 About Me
 <div align="center">
+```
 ╭─────────────────────────────────────────────────────────╮
 │ 👋 Hi, I'm Nishant Bijalwan                              │
 │                                                         │
@@ -134,7 +137,7 @@ http://localhost:5173
 │ ☁️ AWS Cloud Practitioner (Certified)                   │
 │ 📍 Dehradun, India                                      │
 ╰─────────────────────────────────────────────────────────╯
-
+```
 </div>
 
 I focus on building clean, scalable, and user-centric web applications, while continuously improving my problem-solving and system design skills through real-world projects.
