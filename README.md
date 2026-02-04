@@ -10,7 +10,7 @@
 
 A production-ready, interactive portfolio showcasing my skills, projects, and engineering mindset as a Full-Stack Developer.
 
-[🌐 Live Demo](#) 
+[🌐 Live](https://portfolionishant.vercel.app/) 
 • 
 [📄 Resume](./resume/Nishant_Bijalwan_Resume.pdf) 
 • 
