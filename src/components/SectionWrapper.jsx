@@ -5,13 +5,14 @@ function SectionWrapper({ id, children }) {
     <section
       id={id}
       className="
-        relative
-        py-20 md:py-24
-        px-6 md:px-20
+        relative w-full
+        pt-14 pb-12           /* MOBILE spacing */
+        md:pt-24 md:pb-20    /* DESKTOP spacing */
+        px-5 md:px-20
         overflow-hidden
       "
     >
-      {/* Ultra-subtle depth layer (NOT a section divider) */}
+      {/* Ultra-subtle depth layer */}
       <div
         className="
           absolute inset-0
@@ -22,9 +23,9 @@ function SectionWrapper({ id, children }) {
 
       {/* Animated content */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 12 }}     // reduced from 20
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
         viewport={{ once: true }}
         className="relative max-w-6xl mx-auto"
       >
