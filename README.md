@@ -116,11 +116,11 @@ npm
 
 ### Installation
 
-### git clone 
+- git clone 
 https://github.com/Nishant0000001/portfolio.git
-### cd portfolio
-### npm install
-### npm run dev
+- cd portfolio
+- npm install
+- npm run dev
 
 # Open in browser:
 http://localhost:5173
