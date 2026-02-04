@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react"
 import { FaBars, FaTimes } from "react-icons/fa"
-import LogoImage from "C:/Users/nisha/Documents/Myportfolio/portfolio/src/assets/navbar/Artme.jpg"
+import LogoImage from "../assets/navbar/Artme.jpg"
 
 const navItems = [
   { label: "About", href: "#about" },
