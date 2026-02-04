@@ -27,34 +27,26 @@ const useIsMobile = () => {
 const Hero = () => {
   const isMobile = useIsMobile()
 
-  /* ---------------------------
-     Motion values
-  --------------------------- */
+  /* Motion values */
   const rotateX = useMotionValue(0)
   const rotateY = useMotionValue(0)
 
   const springX = useSpring(rotateX, { stiffness: 40, damping: 18 })
   const springY = useSpring(rotateY, { stiffness: 40, damping: 18 })
 
-  /* ---------------------------
-     Auto rotation (ALL devices)
-  --------------------------- */
+  /* Auto rotation */
   useAnimationFrame((time) => {
     rotateY.set(rotateY.get() + 0.12)
     rotateX.set(Math.sin(time / 2600) * 6)
   })
 
-  /* ---------------------------
-     Drag (desktop only)
-  --------------------------- */
+  /* Drag handler (mobile-safe) */
   const handleDrag = (_, info) => {
-    rotateX.set(rotateX.get() - info.delta.y * 0.3)
-    rotateY.set(rotateY.get() + info.delta.x * 0.3)
+    const factor = isMobile ? 0.15 : 0.3
+    rotateX.set(rotateX.get() - info.delta.y * factor)
+    rotateY.set(rotateY.get() + info.delta.x * factor)
   }
 
-  /* ---------------------------
-     3D depth (responsive)
-  --------------------------- */
   const DEPTH = isMobile ? 110 : 180
 
   const SKILLS = [
@@ -73,20 +65,68 @@ const Hero = () => {
         <div className="w-[420px] h-[420px] bg-purple-900/10 rounded-full blur-[120px]" />
       </div>
 
-      <div className="
-        relative z-10 w-full max-w-7xl
-        px-6 md:px-24
-        grid grid-cols-1 lg:grid-cols-2
-        gap-12 lg:gap-20
-        items-center
-        py-20 lg:py-0
-      ">
+      <div
+        className="
+          relative z-10 w-full max-w-7xl
+          px-6 md:px-24
+          grid grid-cols-1 lg:grid-cols-2
+          gap-14 lg:gap-20
+          items-center
+        "
+      >
+        {/* ANIMATION */}
+        <div
+          className="
+            order-1 lg:order-2
+            flex justify-center items-center
+            [perspective:1200px]
+            mt-16 lg:mt-0
+          "
+        >
+          <div className="relative w-56 h-56 lg:w-80 lg:h-80">
+            {/* 3D CORE */}
+            <motion.div
+              style={{
+                rotateX: springX,
+                rotateY: springY,
+                transformStyle: "preserve-3d",
+              }}
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              {SKILLS.map((s, i) => {
+                const Icon = s.icon
+                return (
+                  <div key={i} style={{ transform: s.t }} className="absolute">
+                    <Icon
+                      size={isMobile ? 42 : 60}
+                      className={`${s.color} drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]`}
+                    />
+                  </div>
+                )
+              })}
+            </motion.div>
 
-        {/* TEXT */}
+            {/* DRAG LAYER — DESKTOP + MOBILE */}
+            <motion.div
+              drag="x"
+              onDrag={handleDrag}
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.2}
+              className="
+                absolute inset-0
+                cursor-grab active:cursor-grabbing
+                touch-pan-y
+              "
+            />
+          </div>
+        </div>
+
+        {/* TEXT + STATS */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
+          className="order-2 lg:order-1 flex flex-col"
         >
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
             I&apos;m{" "}
@@ -99,49 +139,39 @@ const Hero = () => {
             I build modern, scalable web applications with clean UI,
             strong fundamentals, and real-world problem solving.
           </p>
-        </motion.div>
 
-        {/* 3D SKILLS */}
-        <div className="flex justify-center items-center [perspective:1200px]">
-          <div className="relative w-56 h-56 lg:w-80 lg:h-80">
-
-            <motion.div
-              style={{
-                rotateX: springX,
-                rotateY: springY,
-                transformStyle: "preserve-3d",
-              }}
-              className="absolute inset-0 flex items-center justify-center"
-            >
-              {SKILLS.map((s, i) => {
-                const Icon = s.icon
-                return (
-                  <div
-                    key={i}
-                    style={{ transform: s.t }}
-                    className="absolute"
-                  >
-                    <Icon
-                      size={isMobile ? 42 : 60}
-                      className={`${s.color} drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]`}
-                    />
-                  </div>
-                )
-              })}
-            </motion.div>
-
-            {/* Drag overlay ONLY on desktop */}
-            {!isMobile && (
-              <motion.div
-                drag
-                onDrag={handleDrag}
-                dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-                dragElastic={0}
-                className="absolute inset-0 cursor-grab active:cursor-grabbing"
-              />
-            )}
+          {/* STATS */}
+          <div className="mt-8 lg:mt-14 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-xl">
+            {[
+              { value: "Open", label: "For Work" },
+              { value: "2", label: "Certification" },
+              { value: "3", label: "Projects" },
+              { value: "100%", label: "Dedication" },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="
+                  bg-gray-900/40
+                  border border-white/10
+                  rounded-2xl
+                  p-4
+                  flex flex-col items-start
+                  backdrop-blur-md
+                "
+              >
+                {item.icon && (
+                  <item.icon className="text-purple-400 mb-3" size={20} />
+                )}
+                <span className="text-2xl font-bold text-white">
+                  {item.value}
+                </span>
+                <span className="text-xs text-white/60 tracking-wide uppercase">
+                  {item.label}
+                </span>
+              </div>
+            ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

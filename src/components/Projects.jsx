@@ -41,17 +41,12 @@ const projects = [
       "Improved backend API design and validation",
     ],
 
-    screenshots: [
-      quizImg,
-      quizImg1, // you can add more images later
-    ],
-
+    screenshots: [quizImg, quizImg1],
     tech: ["React", "Node.js", "Express", "PostgreSQL", "C"],
     github: "https://github.com/yourusername/quiz-app",
     live: "#",
-    featured: true,
     image: quizImg,
-    date: "Nov 2024 - Dec 2024",
+    date: "Nov 2024 – Dec 2024",
   },
 
   {
@@ -78,12 +73,7 @@ const projects = [
       "Improved SQL query optimization",
     ],
 
-    screenshots: [
-      transportImg,
-      transportImg1,
-
-    ],
-
+    screenshots: [transportImg, transportImg1],
     tech: ["Java", "MySQL"],
     github: "https://github.com/yourusername/transport-system",
     live: "#",
@@ -115,12 +105,7 @@ const projects = [
       "Improved backend validation techniques",
     ],
 
-    screenshots: [
-      examImg,
-      examImg1,
-
-    ],
-
+    screenshots: [examImg, examImg1],
     tech: ["Java", "JSP", "MySQL"],
     github: "https://github.com/yourusername/exam-system",
     live: "#",
@@ -142,9 +127,9 @@ function Projects() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-12"
+          className="mb-10"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-white">
             Featured{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
               Projects
@@ -154,7 +139,13 @@ function Projects() {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          className="
+            grid gap-6
+            md:grid-cols-2 lg:grid-cols-3
+            justify-items-center
+          "
+        >
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -164,8 +155,8 @@ function Projects() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
               className="
-                cursor-pointer
-                group relative
+                max-w-sm w-full
+                cursor-pointer group relative
                 bg-gray-900/30 backdrop-blur-md
                 border border-white/5
                 rounded-2xl overflow-hidden
@@ -181,23 +172,34 @@ function Projects() {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="
+                    w-full h-full object-cover
+                    transition-transform duration-500
+                    group-hover:scale-110
+                  "
                 />
-                <div className="absolute inset-0 bg-black/40" />
+                <div
+                  className="
+                    absolute inset-0
+                    bg-black/20
+                    group-hover:bg-black/0
+                    transition-colors duration-300
+                  "
+                />
               </div>
 
               {/* Content */}
-              <div className="relative z-10 p-8">
-                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors">
+              <div className="relative z-10 p-6">
+                <h3 className="text-lg font-bold text-white mb-3 group-hover:text-purple-400">
                   {project.title}
                 </h3>
 
-                <p className="text-white/70 text-sm leading-relaxed mb-6 line-clamp-3">
+                <p className="text-white/70 text-sm mb-4 line-clamp-3">
                   {project.description}
                 </p>
 
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 mb-6">
+                {/* Tech */}
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech, i) => (
                     <span
                       key={i}
@@ -208,7 +210,7 @@ function Projects() {
                   ))}
                 </div>
 
-                {/* Links (prevent modal click) */}
+                {/* Links */}
                 <div className="flex gap-6 text-sm">
                   <a
                     href={project.github}
