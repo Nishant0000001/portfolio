@@ -127,6 +127,7 @@ http://localhost:5173
 
 ## 🎓 About Me
 <div align="center">
+
 ```
 ╭─────────────────────────────────────────────────────────╮
 │ 👋 Hi, I'm Nishant Bijalwan                              │
@@ -138,6 +139,7 @@ http://localhost:5173
 │ 📍 Dehradun, India                                      │
 ╰─────────────────────────────────────────────────────────╯
 ```
+
 </div>
 
 I focus on building clean, scalable, and user-centric web applications, while continuously improving my problem-solving and system design skills through real-world projects.
