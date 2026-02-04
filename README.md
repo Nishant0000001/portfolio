@@ -116,11 +116,11 @@ npm
 
 ### Installation
 
-# git clone 
+### git clone 
 https://github.com/Nishant0000001/portfolio.git
-# cd portfolio
-# npm install
-# npm run dev
+### cd portfolio
+### npm install
+### npm run dev
 
 # Open in browser:
 http://localhost:5173
@@ -130,11 +130,11 @@ http://localhost:5173
 
 ```
 ╭─────────────────────────────────────────────────────────╮
-│ 👋 Hi, I'm Nishant Bijalwan                              │
+│ 👋 Hi, I'm Nishant Bijalwan                             │
 │                                                         │
-│ 🎓 MCA Student @ Graphic Era University                  │
+│ 🎓 MCA Student @ Graphic Era University                 │
 │ 💻 Aspiring Full-Stack Developer                        │
-│ 🌐 React | Node.js | PostgreSQL | Java                   │
+│ 🌐 React | Node.js | PostgreSQL | Java                  │
 │ ☁️ AWS Cloud Practitioner (Certified)                   │
 │ 📍 Dehradun, India                                      │
 ╰─────────────────────────────────────────────────────────╯
