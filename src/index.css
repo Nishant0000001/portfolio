@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html {
+  scroll-behavior: smooth;
+}
+a, button {
+  cursor: pointer;
+}
+@keyframes rotate-cube {
+  from { transform: rotateX(0deg) rotateY(0deg); }
+  to { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+.cube-container {
+  width: 250px;
+  height: 250px;
+  perspective: 1000px;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate-cube 15s linear infinite;
+}
+
+.cube-face {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border: 2px solid rgba(168, 85, 247, 0.5); /* Primary color border */
+  background: rgba(168, 85, 247, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  backdrop-filter: blur(5px);
+}
+
+/* Positioning each face in 3D space */
+.front  { transform: translateZ(125px); }
+.back   { transform: rotateY(180deg) translateZ(125px); }
+.right  { transform: rotateY(90deg) translateZ(125px); }
+.left   { transform: rotateY(-90deg) translateZ(125px); }
+.top    { transform: rotateX(90deg) translateZ(125px); }
+.bottom { transform: rotateX(-90deg) translateZ(125px); }
+
+/* Add to index.css */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.rotate-y-90  { transform: rotateY(90deg); }
+.rotate-y--90 { transform: rotateY(-90deg); }
+.rotate-y-180 { transform: rotateY(180deg); }
+.rotate-x-90  { transform: rotateX(90deg); }
+.rotate-x--90 { transform: rotateX(-90deg); }
+
+.translate-z-\[128px\] { transform: translateZ(128px); }
+.translate-z-\[-128px\] { transform: translateZ(-128px); }
+
+/* Combined transforms for faces */
+.rotate-y-90.translate-z-\[128px\] { transform: rotateY(90deg) translateZ(128px); }
+.rotate-y--90.translate-z-\[128px\] { transform: rotateY(-90deg) translateZ(128px); }
+.rotate-y-180.translate-z-\[-128px\] { transform: rotateY(180deg) translateZ(-128px); }
+.rotate-x-90.translate-z-\[128px\] { transform: rotateX(90deg) translateZ(128px); }
+.rotate-x--90.translate-z-\[128px\] { transform: rotateX(-90deg) translateZ(128px); }
