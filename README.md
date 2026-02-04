@@ -118,11 +118,14 @@ npm
 
 - git clone 
 https://github.com/Nishant0000001/portfolio.git
+
 - cd portfolio
+
 - npm install
+
 - npm run dev
 
-# Open in browser:
+- Open in browser:
 http://localhost:5173
 
 ## 🎓 About Me
