@@ -6,7 +6,7 @@ function SectionWrapper({ id, children }) {
       id={id}
       className="
         relative w-full
-        pt-14 pb-12           /* MOBILE spacing */
+        pt-8 pb-6           /* MOBILE spacing */
         md:pt-24 md:pb-20    /* DESKTOP spacing */
         px-5 md:px-20
         overflow-hidden
