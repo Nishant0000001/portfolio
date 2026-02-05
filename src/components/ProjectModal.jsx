@@ -46,14 +46,24 @@ function ProjectModal({ project, onClose }) {
             {/* IMAGE CAROUSEL */}
             {project.screenshots && (
               <div className="mb-6">
-                <img
-                  src={project.screenshots[activeImage]}
-                  alt={project.title}
-                  className="w-full h-56 object-cover rounded-xl mb-3"
-                />
+                {/* Main Image (NO CROP) */}
+                <div className="w-full aspect-video rounded-xl overflow-hidden bg-black mb-3">
+                  <AnimatePresence mode="wait">
+                    <motion.img
+                      key={activeImage}
+                      src={project.screenshots[activeImage]}
+                      alt={project.title}
+                      className="w-full h-full object-contain"
+                      initial={{ opacity: 0, scale: 0.98 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.98 }}
+                      transition={{ duration: 0.25 }}
+                    />
+                  </AnimatePresence>
+                </div>
 
                 {/* Thumbnails */}
-                <div className="flex gap-2 justify-center">
+                <div className="flex gap-2 justify-center flex-wrap">
                   {project.screenshots.map((img, i) => (
                     <button
                       key={i}
@@ -63,8 +73,8 @@ function ProjectModal({ project, onClose }) {
                         border transition-all
                         ${
                           activeImage === i
-                            ? "border-purple-500"
-                            : "border-white/10 opacity-60"
+                            ? "border-purple-500 opacity-100"
+                            : "border-white/10 opacity-60 hover:opacity-100"
                         }
                       `}
                     >
@@ -91,7 +101,7 @@ function ProjectModal({ project, onClose }) {
               </p>
             )}
 
-            {/* FULL DESCRIPTION */}
+            {/* Description */}
             {project.fullDescription && (
               <div className="mb-6">
                 <h4 className="text-white font-semibold mb-2">
@@ -103,7 +113,7 @@ function ProjectModal({ project, onClose }) {
               </div>
             )}
 
-            {/* FEATURES */}
+            {/* Features */}
             {project.features && (
               <div className="mb-6">
                 <h4 className="text-white font-semibold mb-2">
@@ -117,7 +127,7 @@ function ProjectModal({ project, onClose }) {
               </div>
             )}
 
-            {/* CHALLENGES */}
+            {/* Challenges */}
             {project.challenges && (
               <div className="mb-6">
                 <h4 className="text-white font-semibold mb-2">
@@ -131,7 +141,7 @@ function ProjectModal({ project, onClose }) {
               </div>
             )}
 
-            {/* WHAT I LEARNED (🔥 INTERVIEW GOLD) */}
+            {/* What I Learned */}
             {project.learned && (
               <div className="mb-6">
                 <h4 className="text-white font-semibold mb-2">
@@ -145,7 +155,7 @@ function ProjectModal({ project, onClose }) {
               </div>
             )}
 
-            {/* TECH STACK */}
+            {/* Tech Stack */}
             {project.tech && (
               <div className="flex flex-wrap gap-2 mb-6">
                 {project.tech.map((tech, i) => (
@@ -164,7 +174,7 @@ function ProjectModal({ project, onClose }) {
               </div>
             )}
 
-            {/* LINKS */}
+            {/* Links */}
             <div className="flex gap-6">
               {project.github && (
                 <a

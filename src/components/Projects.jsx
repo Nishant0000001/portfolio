@@ -5,10 +5,13 @@ import SectionWrapper from "./SectionWrapper"
 import ProjectModal from "./ProjectModal"
 
 // Project Images
-import quizImg from "../assets/projects/quiz.png"
+import quizImg1 from "../assets/projects/quiz1.png"
+import quizImg2 from "../assets/projects/quiz2.png"
+import quizImg3 from "../assets/projects/quiz3.png"
+import quizImg4 from "../assets/projects/quiz4.png"
+import quizImg5 from "../assets/projects/quiz5.png"
 import transportImg from "../assets/projects/transport.png"
 import examImg from "../assets/projects/exam.png"
-import quizImg1 from "../assets/projects/quiz1.png"
 import transportImg1 from "../assets/projects/transport1.png"
 import examImg1 from "../assets/projects/exam1.png"
 
@@ -41,11 +44,11 @@ const projects = [
       "Improved backend API design and validation",
     ],
 
-    screenshots: [quizImg, quizImg1],
+    screenshots: [quizImg1, quizImg2, quizImg3, quizImg4, quizImg5],
     tech: ["React", "Node.js", "Express", "PostgreSQL", "C"],
-    github: "https://github.com/yourusername/quiz-app",
-    live: "#",
-    image: quizImg,
+    github: "https://github.com/Nishant0000001/SmartQuiz",
+    live: "https://nishant-smart-quiz.vercel.app/",
+    image: quizImg1,
     date: "Nov 2024 – Dec 2024",
   },
 
