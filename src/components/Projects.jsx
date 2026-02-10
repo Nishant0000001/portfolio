@@ -123,9 +123,7 @@ function Projects() {
 
   return (
     <SectionWrapper id="projects">
-      <div className="max-w-7xl mx-auto px-6">
-
-        {/* Header */}
+      {/* Header */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -133,10 +131,10 @@ function Projects() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
             Featured{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-              Projects
+              Project
             </span>
           </h2>
           <p className="text-white/60 mt-3 max-w-xl">
@@ -146,6 +144,7 @@ function Projects() {
           <div className="w-14 h-1 bg-purple-500/60 mt-3" />
         </motion.div>
 
+      <div className="max-w-7xl mx-auto px-6">
         {/* Projects Grid */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
           {projects.map((project, index) => (
