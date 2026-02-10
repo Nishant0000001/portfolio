@@ -124,25 +124,25 @@ function Projects() {
   return (
     <SectionWrapper id="projects">
       {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-12"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-            Featured{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-              Project
-            </span>
-          </h2>
-          <p className="text-white/60 mt-3 max-w-xl">
-            A selection of real-world projects showcasing my approach to
-            full-stack development and backend logic.
-          </p>
-          <div className="w-14 h-1 bg-purple-500/60 mt-3" />
-        </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mb-12"
+      >
+        <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
+          Featured{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+            Project
+          </span>
+        </h2>
+        <p className="text-white/60 mt-3 max-w-xl">
+          A selection of real-world projects showcasing my approach to
+          full-stack development and backend logic.
+        </p>
+        <div className="w-14 h-1 bg-purple-500/60 mt-3" />
+      </motion.div>
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Projects Grid */}
@@ -156,7 +156,7 @@ function Projects() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
               className="
-                max-w-sm w-full
+                max-w-sm w-[92%] sm:w-full   /* 👈 ONLY CHANGE */
                 cursor-pointer group relative
                 bg-gray-900/35 backdrop-blur-md
                 border border-white/10
