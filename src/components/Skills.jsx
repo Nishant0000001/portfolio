@@ -48,6 +48,11 @@ function Skills() {
               Skills
             </span>
           </h2>
+
+          <p className="text-white/60 mt-3 max-w-xl">
+            Technologies I’ve used to build full-stack applications, APIs,
+            and database-driven systems.
+          </p>
           <div className="w-12 h-1 bg-purple-500/50 mt-2" />
         </motion.div>
 

@@ -32,30 +32,34 @@ function About() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="space-y-6"
         >
-          <p className="
-            max-w-3xl
-            text-white/80
-            text-lg md:text-xl
-            leading-relaxed
-            border-l-4 border-purple-500/40
-            pl-6
-          ">
-            I’m an MCA student with a strong interest in full-stack web development.
-            I enjoy building clean, responsive, and scalable web applications using
-            modern technologies. I focus on writing readable code, understanding
-            system design basics, and continuously improving my problem-solving skills.
+          <p
+            className="
+              max-w-3xl
+              text-white/85
+              text-lg md:text-xl
+              leading-relaxed
+              border-l-4 border-purple-500/60
+              pl-6
+            "
+          >
+            I’m an MCA student actively preparing for a career in software
+            development. I focus on building complete web applications that
+            involve frontend, backend, databases, and real-world logic —
+            not just isolated features or demos.
           </p>
 
-          <p className="
-            max-w-3xl
-            text-white/80
-            text-lg md:text-xl
-            leading-relaxed
-            pl-6
-          ">
-            Currently, I’m strengthening my skills in React, Node.js, databases,
-            and backend fundamentals while working on real-world projects to prepare
-            for software developer roles.
+          <p
+            className="
+              max-w-3xl
+              text-white/75
+              text-lg md:text-xl
+              leading-relaxed
+              pl-6
+            "
+          >
+            My approach is simple: understand the problem deeply, design clean
+            solutions, and write maintainable code. I care about how systems
+            behave, how data flows, and how users experience the product.
           </p>
         </motion.div>
 

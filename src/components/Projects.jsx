@@ -11,37 +11,38 @@ import quizImg3 from "../assets/projects/quiz3.png"
 import quizImg4 from "../assets/projects/quiz4.png"
 import quizImg5 from "../assets/projects/quiz5.png"
 import transportImg from "../assets/projects/transport.png"
-import examImg from "../assets/projects/exam.png"
 import transportImg1 from "../assets/projects/transport1.png"
+import examImg from "../assets/projects/exam.png"
 import examImg1 from "../assets/projects/exam1.png"
 
 const projects = [
   {
     title: "Smart Quiz Application",
+    highlight: "Flagship Project",
     description:
-      "A full-stack quiz platform with admin and user roles, real-time scoring, and DSA-based logic implementation.",
+      "A production-style quiz platform with role-based access, real-time scoring, and backend logic powered by data structures.",
 
     fullDescription:
-      "Smart Quiz Application is a complete quiz management platform with separate admin and user roles. Admins can create and manage quizzes, while users can attempt quizzes with real-time scoring and evaluation.",
+      "Smart Quiz Application is a complete quiz management platform designed with real-world use in mind. It supports separate admin and user roles, dynamic quiz creation, timed assessments, and real-time evaluation using structured backend logic.",
 
     features: [
-      "Admin and User authentication",
+      "Role-based authentication (Admin & User)",
       "Dynamic quiz creation and management",
       "Real-time score calculation",
       "Timer-based quiz system",
-      "Leaderboard using BST logic",
+      "Leaderboard implemented using BST logic",
     ],
 
     challenges: [
-      "Designing efficient quiz flow using DSA",
+      "Designing efficient quiz flow using data structures",
       "Managing real-time state updates",
-      "Handling edge cases for quiz submission",
+      "Handling edge cases during quiz submission",
     ],
 
     learned: [
-      "How to design scalable full-stack applications",
-      "Practical use of Data Structures in real projects",
-      "Improved backend API design and validation",
+      "Designing scalable full-stack applications",
+      "Applying data structures in real-world scenarios",
+      "Improving backend validation and API design",
     ],
 
     screenshots: [quizImg1, quizImg2, quizImg3, quizImg4, quizImg5],
@@ -55,15 +56,15 @@ const projects = [
   {
     title: "Transport Management System",
     description:
-      "A system to manage transport operations including vehicle records, routes, and scheduling.",
+      "A backend-focused system for managing vehicles, routes, and operational data using a structured database design.",
 
     fullDescription:
-      "Transport Management System helps manage vehicles, routes, and scheduling efficiently using a structured backend approach.",
+      "Transport Management System is designed to handle vehicle records, route planning, and transport scheduling with a clean backend architecture and relational database model.",
 
     features: [
       "Vehicle and route management",
-      "Database-driven records",
-      "Simple and clean UI",
+      "Relational database-driven records",
+      "Clean and minimal user interface",
     ],
 
     challenges: [
@@ -72,8 +73,8 @@ const projects = [
     ],
 
     learned: [
-      "Backend design with Java",
-      "Improved SQL query optimization",
+      "Backend system design with Java",
+      "SQL query optimization and normalization",
     ],
 
     screenshots: [transportImg, transportImg1],
@@ -87,25 +88,25 @@ const projects = [
   {
     title: "Online Examination System",
     description:
-      "Web-based examination platform with authentication, timed tests, and result evaluation.",
+      "A web-based examination platform supporting secure login, timed exams, and automated result processing.",
 
     fullDescription:
-      "An online examination platform that allows secure login, timed exams, and automated result processing.",
+      "Online Examination System allows authenticated users to attempt timed online exams with automatic evaluation and controlled submission handling.",
 
     features: [
       "Secure authentication",
-      "Timed online exams",
+      "Timed online examinations",
       "Automatic result evaluation",
     ],
 
     challenges: [
       "Managing session-based authentication",
-      "Preventing invalid submissions",
+      "Preventing invalid or duplicate submissions",
     ],
 
     learned: [
       "Understanding JSP lifecycle",
-      "Improved backend validation techniques",
+      "Improving backend validation techniques",
     ],
 
     screenshots: [examImg, examImg1],
@@ -130,7 +131,7 @@ function Projects() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-10"
+          className="mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white">
             Featured{" "}
@@ -138,17 +139,15 @@ function Projects() {
               Projects
             </span>
           </h2>
-          <div className="w-12 h-1 bg-purple-500/50 mt-2" />
+          <p className="text-white/60 mt-3 max-w-xl">
+            A selection of real-world projects showcasing my approach to
+            full-stack development and backend logic.
+          </p>
+          <div className="w-14 h-1 bg-purple-500/60 mt-3" />
         </motion.div>
 
         {/* Projects Grid */}
-        <div
-          className="
-            grid gap-6
-            md:grid-cols-2 lg:grid-cols-3
-            justify-items-center
-          "
-        >
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -160,16 +159,27 @@ function Projects() {
               className="
                 max-w-sm w-full
                 cursor-pointer group relative
-                bg-gray-900/30 backdrop-blur-md
-                border border-white/5
+                bg-gray-900/35 backdrop-blur-md
+                border border-white/10
                 rounded-2xl overflow-hidden
                 transition-all duration-300
                 hover:-translate-y-2
-                hover:border-purple-500/40
+                hover:border-purple-500/50
                 hover:bg-gray-900/50
-                hover:shadow-[0_0_40px_rgba(168,85,247,0.15)]
+                hover:shadow-[0_0_45px_rgba(168,85,247,0.18)]
               "
             >
+              {/* Highlight Badge */}
+              {project.highlight && (
+                <span className="
+                  absolute top-3 right-3 z-20
+                  text-xs px-3 py-1 rounded-full
+                  bg-purple-500/20 text-purple-300
+                ">
+                  {project.highlight}
+                </span>
+              )}
+
               {/* Image */}
               <div className="relative h-44 overflow-hidden">
                 <img
@@ -181,14 +191,7 @@ function Projects() {
                     group-hover:scale-110
                   "
                 />
-                <div
-                  className="
-                    absolute inset-0
-                    bg-black/20
-                    group-hover:bg-black/0
-                    transition-colors duration-300
-                  "
-                />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300" />
               </div>
 
               {/* Content */}
@@ -197,7 +200,7 @@ function Projects() {
                   {project.title}
                 </h3>
 
-                <p className="text-white/70 text-sm mb-4 line-clamp-3">
+                <p className="text-white/75 text-sm mb-4 line-clamp-3">
                   {project.description}
                 </p>
 
@@ -206,7 +209,7 @@ function Projects() {
                   {project.tech.map((tech, i) => (
                     <span
                       key={i}
-                      className="text-[10px] px-3 py-1 bg-white/5 text-white/60 rounded-lg border border-white/10"
+                      className="text-[10px] px-3 py-1 bg-white/5 text-white/65 rounded-lg border border-white/10"
                     >
                       {tech}
                     </span>
@@ -220,7 +223,7 @@ function Projects() {
                     target="_blank"
                     rel="noreferrer"
                     onClick={(e) => e.stopPropagation()}
-                    className="flex items-center gap-2 text-white/50 hover:text-white"
+                    className="flex items-center gap-2 text-white/60 hover:text-white"
                   >
                     <FaGithub /> Code
                   </a>
@@ -230,7 +233,7 @@ function Projects() {
                     target="_blank"
                     rel="noreferrer"
                     onClick={(e) => e.stopPropagation()}
-                    className="flex items-center gap-2 text-white/50 hover:text-white"
+                    className="flex items-center gap-2 text-white/60 hover:text-white"
                   >
                     <FaExternalLinkAlt /> Live
                   </a>

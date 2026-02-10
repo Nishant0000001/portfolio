@@ -8,21 +8,20 @@ const education = [
     degree: "Master of Computer Applications (MCA)",
     institute: "Graphic Era University",
     description:
-      "Advanced studies in software development, databases, system design, and modern web technologies.",
+      "Focused on software development, backend systems, databases, and building application-oriented solutions aligned with industry practices.",
   },
   {
     year: "2021 – 2024",
     degree: "Bachelor of Computer Applications (BCA)",
     institute: "Dev Sanskriti Vishwavidyalaya",
     description:
-      "Built strong programming fundamentals and completed multiple academic and practical projects.",
+      "Developed strong programming fundamentals and applied them through academic and practical full-stack projects.",
   },
 ]
 
 function Education() {
   return (
     <SectionWrapper id="education">
-      {/* Width only — padding handled by SectionWrapper */}
       <div className="relative max-w-7xl mx-auto">
 
         {/* Header */}
@@ -36,10 +35,12 @@ function Education() {
           <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
             Education
           </h2>
-          <p className="text-white/60 mt-2 max-w-xl">
-            Academic background supporting my technical journey
+
+          <p className="text-white/60 mt-3 max-w-xl">
+            Academic foundation supporting my growth as a software developer.
           </p>
-          <div className="w-12 h-1 bg-purple-500/50 mt-3" />
+
+          <div className="w-14 h-1 bg-purple-500/60 mt-3" />
         </motion.div>
 
         {/* Timeline */}
@@ -70,13 +71,13 @@ function Education() {
               {/* Education Card */}
               <div
                 className="
-                  bg-gray-900/35
+                  bg-gray-900/40
                   backdrop-blur-md
-                  border border-white/5
+                  border border-white/10
                   rounded-2xl p-6
                   transition-all duration-300
-                  hover:border-purple-500/40
-                  hover:shadow-[0_0_40px_rgba(168,85,247,0.12)]
+                  hover:border-purple-500/50
+                  hover:shadow-[0_0_45px_rgba(168,85,247,0.15)]
                 "
               >
                 <span className="text-xs text-purple-400 font-semibold">
@@ -91,7 +92,7 @@ function Education() {
                   {edu.institute}
                 </p>
 
-                <p className="text-white/50 text-sm mt-3 leading-relaxed">
+                <p className="text-white/55 text-sm mt-3 leading-relaxed">
                   {edu.description}
                 </p>
               </div>
@@ -100,14 +101,16 @@ function Education() {
         </div>
 
         {/* Subtle local glow */}
-        <div className="
-          absolute -z-10
-          top-1/3 left-0
-          w-72 h-72
-          bg-purple-600/5
-          blur-[160px]
-          rounded-full
-        " />
+        <div
+          className="
+            absolute -z-10
+            top-1/3 left-0
+            w-72 h-72
+            bg-purple-600/5
+            blur-[160px]
+            rounded-full
+          "
+        />
       </div>
     </SectionWrapper>
   )

@@ -35,7 +35,7 @@ function ProjectModal({ project, onClose }) {
               max-h-[90vh] overflow-y-auto
             "
           >
-            {/* Close Button */}
+            {/* Close */}
             <button
               onClick={onClose}
               className="absolute top-4 right-4 text-white/60 hover:text-white"
@@ -43,11 +43,10 @@ function ProjectModal({ project, onClose }) {
               <FaTimes />
             </button>
 
-            {/* IMAGE CAROUSEL */}
+            {/* Screenshots */}
             {project.screenshots && (
-              <div className="mb-6">
-                {/* Main Image (NO CROP) */}
-                <div className="w-full aspect-video rounded-xl overflow-hidden bg-black mb-3">
+              <div className="mb-8">
+                <div className="w-full aspect-video rounded-xl overflow-hidden bg-black mb-4">
                   <AnimatePresence mode="wait">
                     <motion.img
                       key={activeImage}
@@ -62,7 +61,6 @@ function ProjectModal({ project, onClose }) {
                   </AnimatePresence>
                 </div>
 
-                {/* Thumbnails */}
                 <div className="flex gap-2 justify-center flex-wrap">
                   {project.screenshots.map((img, i) => (
                     <button
@@ -89,23 +87,24 @@ function ProjectModal({ project, onClose }) {
               </div>
             )}
 
-            {/* Title */}
-            <h3 className="text-2xl font-bold text-white mb-1">
-              {project.title}
-            </h3>
+            {/* Header */}
+            <div className="mb-6">
+              <h3 className="text-2xl font-bold text-white">
+                {project.title}
+              </h3>
 
-            {/* Date */}
-            {project.date && (
-              <p className="text-white/50 text-sm mb-6">
-                {project.date}
-              </p>
-            )}
+              {project.date && (
+                <p className="text-white/50 text-sm mt-1">
+                  {project.date}
+                </p>
+              )}
+            </div>
 
-            {/* Description */}
+            {/* Overview */}
             {project.fullDescription && (
-              <div className="mb-6">
+              <div className="mb-8">
                 <h4 className="text-white font-semibold mb-2">
-                  Description
+                  Project Overview
                 </h4>
                 <p className="text-white/80 leading-relaxed">
                   {project.fullDescription}
@@ -115,11 +114,11 @@ function ProjectModal({ project, onClose }) {
 
             {/* Features */}
             {project.features && (
-              <div className="mb-6">
-                <h4 className="text-white font-semibold mb-2">
-                  Features
+              <div className="mb-8">
+                <h4 className="text-white font-semibold mb-3">
+                  Key Features
                 </h4>
-                <ul className="list-disc list-inside text-white/70 space-y-1">
+                <ul className="list-disc list-inside text-white/75 space-y-1">
                   {project.features.map((item, i) => (
                     <li key={i}>{item}</li>
                   ))}
@@ -129,9 +128,9 @@ function ProjectModal({ project, onClose }) {
 
             {/* Challenges */}
             {project.challenges && (
-              <div className="mb-6">
-                <h4 className="text-white font-semibold mb-2">
-                  Challenges
+              <div className="mb-8">
+                <h4 className="text-white font-semibold mb-3">
+                  Technical Challenges
                 </h4>
                 <ul className="list-disc list-inside text-white/70 space-y-1">
                   {project.challenges.map((item, i) => (
@@ -141,10 +140,10 @@ function ProjectModal({ project, onClose }) {
               </div>
             )}
 
-            {/* What I Learned */}
+            {/* Learnings */}
             {project.learned && (
-              <div className="mb-6">
-                <h4 className="text-white font-semibold mb-2">
+              <div className="mb-8">
+                <h4 className="text-white font-semibold mb-3">
                   What I Learned
                 </h4>
                 <ul className="list-disc list-inside text-white/70 space-y-1">
@@ -157,25 +156,30 @@ function ProjectModal({ project, onClose }) {
 
             {/* Tech Stack */}
             {project.tech && (
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.tech.map((tech, i) => (
-                  <span
-                    key={i}
-                    className="
-                      text-xs px-3 py-1
-                      rounded-full
-                      bg-white/5 text-white/70
-                      border border-white/10
-                    "
-                  >
-                    {tech}
-                  </span>
-                ))}
+              <div className="mb-8">
+                <h4 className="text-white font-semibold mb-3">
+                  Tech Stack
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="
+                        text-xs px-3 py-1
+                        rounded-full
+                        bg-white/5 text-white/70
+                        border border-white/10
+                      "
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
             )}
 
             {/* Links */}
-            <div className="flex gap-6">
+            <div className="flex gap-6 pt-4 border-t border-white/10">
               {project.github && (
                 <a
                   href={project.github}
@@ -194,7 +198,7 @@ function ProjectModal({ project, onClose }) {
                   rel="noreferrer"
                   className="flex items-center gap-2 text-white/70 hover:text-white"
                 >
-                  <FaExternalLinkAlt /> Live
+                  <FaExternalLinkAlt /> Live Demo
                 </a>
               )}
             </div>

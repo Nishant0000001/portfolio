@@ -129,9 +129,9 @@ const Hero = () => {
           className="order-2 lg:order-1 flex flex-col"
         >
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-            I&apos;m{" "}
+            Hi, I&apos;m{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-              Nishant
+              Nishant Bijalwan
             </span>
           </h1>
 
